@@ -1,44 +1,44 @@
-import { model, Schema, Document } from "mongoose";
-import Role from './Role';
+import  mongoose  from "mongoose";
+// import Role from './Role';
 
-const userSchema = new Schema({
+const userSchema = mongoose.Schema({
     name: {
-        type : 'Schema.Types.String',
+        type : String,
         required: true,
         trim: true,
         maxlength: 100,
     },
     email: {
-        type: 'Schema.Types.String',
+        type: String,
         required: true,
         unique: true,
         trim: true,
         select: false,
     },
     password: {
-        type: 'Schema.Types.String',
+        type: String,
     select: false,        
     },
     profileUrl: {
-        type: 'Schema.Types.String',
+        type: String,
         trim: true,
     },
     roles: {
         type: [
             {
-                type: Schema.Types.ObjectId,
-                ref: 'Role',
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'role',
             },
         ],
         required: true,
         select: false,
     },
     verified: {
-        type: Schema.Types.Boolean,
+        type: mongoose.Schema.Types.Boolean,
         default: false,
     },
     status: {
-        type: Schema.Types.Boolean,
+        type: mongoose.Schema.Types.Boolean,
         default: true,
     },
     createdAt: {
@@ -59,4 +59,4 @@ versionKey: false,
 
 const UserModel = mongoose.model('User', userSchema);
 
-export default UserModel
+export default UserModel;
