@@ -1,4 +1,4 @@
-import { Response } from 'express';
+import express from 'express';
 import { environment } from '../config';
 import {
   AuthFailureResponse,
