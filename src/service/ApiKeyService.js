@@ -1,4 +1,4 @@
-import ApiKey, { ApiKeyModel } from '../database/model/ApiKey';
+import { ApiKeyModel } from '../database/model/ApiKey';
 
 export default class ApiService {
     static async findByKey (key) {
