@@ -17,7 +17,7 @@ const userSchema = mongoose.Schema({
     },
     password: {
         type: String,
-    select: false,        
+         select: false,        
     },
     profileUrl: {
         type: String,
